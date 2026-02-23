@@ -46,10 +46,10 @@ function updateFormat() {
 		const yearDiff = now.getFullYear() - timestampDate.getFullYear();
 		switch (true) {
 			case diff < 60000: //Less than a minute ago
-				item.innerHTML = `${Math.floor(diff / 1000)} seconds ago`;
+				item.innerHTML = `${Math.floor(diff / 1000) === 1 ? '1 second ago' : `${Math.floor(diff / 1000)} seconds ago`}`;
 				break;
 			case diff < 3600000: //Less than an hour ago
-				item.innerHTML = `${Math.floor(diff / 60000)} minutes ago`;
+				item.innerHTML = `${Math.floor(diff / 60000) === 1 ? '1 minute ago' : `${Math.floor(diff / 60000)} minutes ago`}`;
 				break;
 			case dayDiff === 0: //Today
 				item.innerHTML = `${timestampDate.toLocaleTimeString(undefined, { hour: '2-digit', minute: '2-digit' })}`;
