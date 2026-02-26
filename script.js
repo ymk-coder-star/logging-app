@@ -58,7 +58,7 @@ function updateFormat() {
 				item.innerHTML = `Yesterday ${timestampDate.toLocaleTimeString(undefined, { hour: '2-digit', minute: '2-digit' })}`;
 				break;
 			case diff / 604800000 < 1 && dayDiff !== 0: //Less than a week ago
-				item.innerHTML = `${timestampDate.toLocaleDateString(undefined, { weekday: long })}`;
+				item.innerHTML = `${timestampDate.toLocaleDateString(undefined, { weekday: 'long' })}`;
 				break;
 			case yearDiff === 0: //This year
 				item.innerHTML = `${timestampDate.toLocaleDateString(undefined, { month: 'short', day: '2-digit' })}`;
